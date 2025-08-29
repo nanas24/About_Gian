@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giannnn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #552427;
+            background: linear-gradient(135deg, #5592cc 0%, #f5dbff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        /* Profile Section */
+        .profile {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #ff6b6b;
+            transform: translateY(-3px);
+        }
+
+        /* Content Section */
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .about-text {
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Projects */
+        .project {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .content {
+                padding: 2rem;
+            }
+        }
+
+        /* Animations */
+        .profile-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Tentang Gian</div>
+            <p class="tagline">Website Personal Saya</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Profile Sidebar -->
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="img/WhatsApp Image 2025-08-29 at 18.23.34.jpeg" alt="Foto profil santai dengan senyum ramah dan background alami" onerror="this.style.display='none'">
+                </div>
+                <h2 class="profile-name">Gian Gilang S.</h2>
+                <p class="profile-title">Segala Bisa</p>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/5uperdennn?igsh=aHU5eTdjc29mNjE3" class="social-link"><i class="fab fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="content">
+                <!-- About Section -->
+                <div class="section">
+                    <h3 class="section-title">Tentang Saya</h3>
+                    <div class="about-text">
+                        <p>Halo! Saya Gian Gilang Sopian atau yang biasa dipanggil nden,saya sangat bisa semua hal tetapi tidak ahli,tapi rasa ingin belajar saya sangat besar dan tidak malas untuk mencari hal yang baru.</p>
+                        <p>Di waktu luang, saya senang belajar hal baru, menjelajahi tempat-tempat menarik, dan bertemu dengan orang-orang bayak dan mencari ilmu walaupun sedikit saja,ilmu ya tetap ilmu walaupun sekecil apa itu pasti akan berguna disesuatu saat.</p>
+                        <p>Saya percaya bahwa setiap orang punya cerita pengalaman yang unik dan bermanfaat yang bisa saya jadikan pelajaran untuk saya.</p>
+                        <p>saya sangat suka hal yang berbau otomotif mau kendaraan motor,mobil,dan lainnya.</p>
+                        <p>Terima kasih sudah berkunjung ke website saya! semoga hari hari kalian menyenangkan.</p>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="section">
+                    <h3 class="section-title">Keahlian</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">Otomotif</div>
+                            <div class="skill-level">Lumayan hehe</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">In Race</div>
+                            <div class="skill-level">Masih Pemula</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Play Game</div>
+                            <div class="skill-level">Ga Jago!</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Modificate Motocycle</div>
+                            <div class="skill-level">Hobi Saya Dongss</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="section">
+                    <h3 class="section-title">Kesibukan Sekarang :</h3>
+                    <div class="project">
+                        <h4 class="project-title">ROAD RACE</h4>
+                        <img src="img/WhatsApp Image 2025-08-29 at 18.43.13.jpeg" alt="Road Race">
+                        <img src="img/WhatsApp Image 2025-08-29 at 18.43.14 copy.jpeg" alt="Champions">
+                    </div>
+                    <div class="project">
+                        <h4 class="project-title">School</h4>
+                        <p class="project-desc">Tempat saya mencari ilmu dan pengalaman.</p>
+                        <img src="img/WhatsApp Image 2025-08-29 at 18.49.49.jpeg" alt="wiht friend">
+                        <img src="img/WhatsApp Image 2025-08-29 at 18.49.49 (1).jpeg" alt="same">
+                    </div>
+                    <div class="project">
+                        <h4 class="project-title">Kiw</h4>
+                        <img src="img/IMG-20241104-WA0168.jpg" alt="gf">
+                        <img src="img/WhatsApp Image 2025-08-29 at 19.58.47.jpeg" alt="ahay">
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="section">
+                    <h3 class="section-title">Kontak</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>giangilangsopiann@gmail.com</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>Rahasia</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>sangatta,Indonesia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Yang buat nden wlee</p>
+        </footer>
+    </div>
+
+    <script>
+        // Animasi scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Typing effect untuk nama
+            const profileName = document.querySelector('.profile-name');
+            const originalName = profileName.textContent;
+            profileName.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalName.length) {
+                    profileName.textContent += originalName.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
+
